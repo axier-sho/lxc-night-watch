@@ -65,7 +65,11 @@ per low reading:
 - Every further reading below 450 **updates the same open incident**. Update the
   lowest observed reading and the reading count. Do not create a second incident.
 - The first reading at or above 450 while an incident is open **closes** it. Add
-  the recovery time, the recovering reading, and mark it `recovered`.
+  the recovery time and the recovering reading, and change the status word in
+  that incident's heading from `open` to `recovered`. Filling in the recovery
+  time is not enough on its own — an incident whose heading still says `open` is
+  still open, and the next low reading would wrongly update it instead of opening
+  a new one.
 
 ## 4. Report
 
